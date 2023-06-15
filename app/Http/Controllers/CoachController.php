@@ -3,15 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Coach;
 
-class Player extends Controller
+class CoachController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $coachs =Coach::all();
+        return view('coach.index',[
+            'coachs' => $coachs,
+        ]);
     }
 
     /**

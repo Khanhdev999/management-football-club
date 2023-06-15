@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Coach;
+use App\Http\Controllers\CoachController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('/coachs',Coach::class);
+Route::resource('/coachs',CoachController::class);
