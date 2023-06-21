@@ -5,6 +5,8 @@ use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthenticationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +18,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
+Route::get('/naiso',function(){
+    return view('welcome');
 });
 
+Route::resource('/players',PlayerController::class)->middleware('auth');
+Route::resource('/tournaments',TournamentController::class)->middleware('auth');
+Route::resource('/teams',TeamController::class)->middleware('auth');
+Route::resource('/coachs',CoachController::class)->middleware('auth');
 
-Route::resource('/players',PlayerController::class);
-Route::resource('/tournaments',TournamentController::class);
-Route::resource('/teams',TeamController::class);
-Route::resource('/coachs',CoachController::class);
-
+Route::get('/login', AuthenticationController::class . '@loginIndex')->name('login');
+Route::get('/register', AuthenticationController::class . '@registerIndex');
+Route::post('/login', AuthenticationController::class . '@login');
+Route::post('/register', AuthenticationController::class . '@register');
+Route::get('/logout', AuthenticationController::class . '@logout');
