@@ -1,28 +1,32 @@
 @extends('layout.layout')
-@section('title', 'Coach')
+@section('title', 'Coach List')
 @section('content')
 <div class="table-responsive">
+  @if(Session::has('mes'))
+  <div class="alert alert-success" role="alert">
+      {{Session::get('mes')}}
+  </div>
+  @endif
+  @if(Session::has('delete'))
+  <div class="alert alert-success" role="alert">
+      {{Session::get('delete')}}
+  </div>
+  @endif
+  <h1 style="text-align:center;">Coaches List
+  </h1>
+  <a href="{{url("/coachs/create")}}" class="btn btn-primary">Add new</a>
+  <br/>
   <table class="table table-striped table-hover">
       <thead class="table-light">
           <tr>
               <th>Name</th>
-              <th>Birthday</th>
-              <th>Phone</th>
-              <th>Address</th>
               <th>Action</th>
           </tr>
           </thead>
           <tbody class="table-group-divider">
                 @foreach ($coachs as $coach)
                 <tr class="table-primary" >
-                  <td>
-                    <a href="{{url("/coachs/".$coach->id)}}">
-                    {{$coach->name}}
-                    </a>
-                  </td>
-                  <td>{{$coach->birthday}}</td>
-                  <td>{{$coach->phone}}</td>
-                  <td>{{$coach->address}}</td>
+                  <td>{{$coach->name}}</td>
                   <td>
                     <a href="{{url("/coachs/".$coach->id)}}" class="btn btn-primary">View</a>
                     <a href="{{url("/coachs/".$coach->id."/edit")}}" class="btn btn-warning">Edit</a>
@@ -40,5 +44,4 @@
           </tfoot>
   </table>
 </div>
-
 @endsection

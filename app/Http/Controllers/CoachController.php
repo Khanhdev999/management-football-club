@@ -12,8 +12,9 @@ class CoachController extends Controller
      */
     public function index()
     {
-        $coachs =Coach::all();
-        return view('coach.index',[
+        $coachs = Coach::all();
+
+        return view('coach.index', [
             'coachs' => $coachs,
         ]);
     }
@@ -23,9 +24,9 @@ class CoachController extends Controller
      */
     public function create()
     {
-        $coachs = Coach::all();
+        $coachs =  Coach::all();
         return view('coach.create', [
-            'coachs' => $coachs,            
+            'coachs' => $coachs,
         ]);
     }
 
@@ -35,12 +36,15 @@ class CoachController extends Controller
     public function store(Request $request)
     {
         $coach = new Coach();
+
         $coach->name = $request->name;
         $coach->birthday = $request->birthday;
         $coach->phone = $request->phone;
         $coach->address = $request->address;
+        $photo = $request->file('photo')->store('public'); 
+        $coach->photo = substr($photo,strlen('public/'));
         $coach->save();
-        return redirect('/coachs');
+        return redirect('/coachs')->with('mes','Add successfull!!!');
     }
 
     /**
@@ -75,7 +79,6 @@ class CoachController extends Controller
         $coach->birthday = $request->birthday;
         $coach->phone = $request->phone;
         $coach->address = $request->address;
-
         $coach->save();
 
         return redirect('/coachs');
@@ -87,9 +90,7 @@ class CoachController extends Controller
     public function destroy(string $id)
     {
         $coach = Coach::find($id);
-
         $coach->delete();
-
-        return redirect('/coachs');
+        return redirect('/coachs')->with('delete','Delete successfull!!!');
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CoachController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +27,6 @@ Route::get('/register', function () {
 
 Route::resource('/players',PlayerController::class);
 Route::resource('/tournaments',TournamentController::class);
+Route::resource('/teams',TeamController::class);
+Route::resource('/coachs',CoachController::class);
+

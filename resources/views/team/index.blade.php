@@ -1,7 +1,21 @@
 @extends('layout.layout')
-@section('title', 'Team')
+@section('title', 'Player List')
 @section('content')
 <div class="table-responsive">
+  @if(Session::has('mes'))
+  <div class="alert alert-success" role="alert">
+      {{Session::get('mes')}}
+  </div>
+  @endif
+  @if(Session::has('delete'))
+  <div class="alert alert-success" role="alert">
+      {{Session::get('delete')}}
+  </div>
+  @endif
+  <h1 style="text-align:center;">Team List
+  </h1>
+  <a href="{{url("/teams/create")}}" class="btn btn-primary">Add new</a>
+  <br/>
   <table class="table table-striped table-hover">
       <thead class="table-light">
           <tr>
@@ -12,12 +26,7 @@
           <tbody class="table-group-divider">
                 @foreach ($teams as $team)
                 <tr class="table-primary" >
-                  <td>
-                    <a href="{{url("/teams/".$team->id)}}">
-                    {{$team->name}}
-                    </a>
-                  </td>
-                  
+                  <td>{{$team->name}}</td>
                   <td>
                     <a href="{{url("/teams/".$team->id)}}" class="btn btn-primary">View</a>
                     <a href="{{url("/teams/".$team->id."/edit")}}" class="btn btn-warning">Edit</a>
@@ -35,5 +44,4 @@
           </tfoot>
   </table>
 </div>
-
 @endsection

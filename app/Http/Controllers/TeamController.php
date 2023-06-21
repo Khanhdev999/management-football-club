@@ -13,7 +13,8 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::all();
-        return view('team.index',[
+
+        return view('team.index', [
             'teams' => $teams,
         ]);
     }
@@ -23,9 +24,10 @@ class TeamController extends Controller
      */
     public function create()
     {
-        $teams = Team::all();
+        $team =  Team::all();
+
         return view('team.create', [
-            'teams' => $teams,            
+            'team' => $team,
         ]);
     }
 
@@ -36,8 +38,9 @@ class TeamController extends Controller
     {
         $team = new Team();
         $team->name = $request->name;
+
         $team->save();
-        return redirect('/teams');
+        return redirect('/teams')->with('mes','Add successfull!!!');
     }
 
     /**
@@ -81,6 +84,6 @@ class TeamController extends Controller
     {
         $team = Team::find($id);
         $team->delete();
-        return redirect('/teams');
+        return redirect('/teams')->with('delete','Delete successfull!!!');
     }
 }

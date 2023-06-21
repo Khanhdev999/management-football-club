@@ -13,6 +13,7 @@ class Coach extends Model
         'birthday',
         'phone',
         'address',
+        'photo',
     ];
     public function players() {
         return $this->hasMany(Player::class);
