@@ -27,12 +27,12 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        //$teams = Team::all();
-        //$coachs = Coach::all();
+        $teams = Team::all();
+        $coachs = Coach::all();
         $tournaments=Tournament::all();
         return view('player.create', [
-            // 'teams' => $teams,
-            // 'coachs' => $coachs,
+            'teams' => $teams,
+             'coachs' => $coachs,
             'tournaments' => $tournaments,
         ]
     );
@@ -74,13 +74,13 @@ class PlayerController extends Controller
     public function edit(string $id)
     {
         $player = Player::find($id);
-        //$coachs = Coach::all();
-        //$teams = Team::All();
+        $coachs = Coach::all();
+        $teams = Team::All();
         $tournaments=Tournament::all();
         return view('player.edit', [
             'player' => $player,
-            //'coachs' => $coachs,
-            //'teams' =>$teams,
+            'coachs' => $coachs,
+            'teams' =>$teams,
             'tournament' => $tournaments,
         ]);
     }

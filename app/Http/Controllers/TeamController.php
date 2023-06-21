@@ -13,7 +13,6 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::all();
-
         return view('team.index', [
             'teams' => $teams,
         ]);
@@ -25,7 +24,6 @@ class TeamController extends Controller
     public function create()
     {
         $team =  Team::all();
-
         return view('team.create', [
             'team' => $team,
         ]);

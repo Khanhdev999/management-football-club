@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('title','New Coach')
+@section('title','New Tournament')
 @section('content')
 <form action="/tournaments" method="post" >
     @csrf

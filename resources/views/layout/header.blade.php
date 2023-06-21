@@ -16,20 +16,23 @@
                     <a class="nav-link" href="/tournaments">Tournament</a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0" method="get" action="search.html">
-                <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm" aria-label="Search"
-                    name="keyword_tensanpham">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
-            </form>
         </div>
-        <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="/regier">Register</a>
-            </li>
-            <li class="nav-item text-nowrap">
-                <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
-                <a class="nav-link" href="/login">Login</a>
-            </li>
-        </ul>
+        <ul class="navbar-nav ml-auto">
+            @if (Auth::check())
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ Auth::user()->name }} <span class="visually-hidden"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout <span class="visually-hidden"></span></a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login <span class="visually-hidden"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register <span class="visually-hidden"></span></a>
+                </li>
+            @endif
+            </ul>
     </div>
 </nav>

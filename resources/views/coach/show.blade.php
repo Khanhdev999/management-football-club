@@ -1,38 +1,46 @@
 @extends('layout.layout')
 @section('title', 'Coach Detail')
 @section('content')
-<div class="container mt-4">
-    <div id="thongbao" class="alert alert-danger d-none face" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-  
-    <div class="card">
-        <div class="container-fliud">
-            <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post"
-                action="/php/twig/frontend/giohang/themvaogiohang">
-                <input type="hidden" name="sp_ma" id="sp_ma" value="5">
-                <input type="hidden" name="sp_ten" id="sp_ten" value="Samsung Galaxy Tab 10.1 3G 16G">
-                <input type="hidden" name="sp_gia" id="sp_gia" value="10990000.00">
-                <input type="hidden" name="hinhdaidien" id="hinhdaidien" value="samsung-galaxy-tab-10.jpg">
-  
-                <div class="wrapper row">
-                    <div class="preview col-md-6">
- <div class="coach-image">
-    <img src="{{url("/upload/".$coach->photo)}}" class="img-fluid rounded-top" alt="">                            </div>
- </div>
-                    </div>
-                    <div class="details col-md-6">
-                        <h1 class="product-title">Name: {{$coach->name}}</h1>
-                        <h3 class="product-title">Birth Day: {{$coach->birthday}}</h3>
-                        <h3 class="product-title">Phone: {{$coach->phone}}</h3>
-                        <h3 class="product-title">Address: {{$coach->address}}</h3>
-                    </div>
+<div class="w3-content" style="max-width:1400px">
 
-                </div>
-            </form>
+    <!-- Header -->    
+    <!-- Grid -->
+    <div class="w3-row">
+    
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
+      <!-- Blog entry -->
+      <div class="w3-card-4 w3-margin w3-white">
+        <img style="height:500px;width:100%;" src="{{ url("/upload/".$coach->photo) }}" class="img-fluid rounded-top" alt="">
+        <div class="w3-container">
+          <h3><b>Birth Day -- {{$coach->birthday}}</b></h3>
+          <h5>Phone number:  <span class="w3-opacity">{{$coach->phone}}</span></h5>
+          <h5>Address:  <span class="w3-opacity">{{$coach->address}}</span></h5>
         </div>
+      </div>
+      <hr>
+    
+      <!-- Blog entry -->
+    <!-- END BLOG ENTRIES -->
     </div>
-  </div>
+    
+    <!-- Introduction menu -->
+    <div class="w3-col l4">
+      <!-- About Card -->
+      <div class="w3-card w3-margin w3-margin-top">
+        <img style="width:100%;" src="{{ url("/upload/".$coach->photo) }}" class="img-fluid rounded-top" alt="">
+        <div class="w3-container w3-white">
+          <h4><b>He Name Is <span style="color: brown">{{$coach->name}}</span></b></h4>
+          <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+        </div>
+      </div><hr>
+      
+    <!-- END Introduction Menu -->
+    </div>
+    
+    <!-- END GRID -->
+    </div><br>
+    
+    <!-- END w3-content -->
+    </div>
 @endsection

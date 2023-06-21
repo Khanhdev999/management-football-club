@@ -9,7 +9,7 @@
         <input type="text" class="form-control" id="name" name="name" placeholder="Name">
       </div>
       <div class="form-group col-md-6">
-        <label for="category" class="form-label">Coach List</label>
+        <label for="category" class="form-label">Player List</label>
         <select id="category" name="coach_id" id="coach_id" class="form-select" aria-label="Select Category">
             <option selected>Please choose one</option>
             @foreach($coachs as $coach)

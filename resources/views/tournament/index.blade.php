@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('title', 'Player List')
+@section('title', 'Tournament List')
 @section('content')
 <div class="table-responsive">
   @if(Session::has('mes'))

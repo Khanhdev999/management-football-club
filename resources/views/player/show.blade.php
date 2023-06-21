@@ -1,35 +1,47 @@
 @extends('layout.layout')
-@section('title', 'Coach Detail')
+@section('title', 'Player Detail')
 @section('content')
-<div class="container mt-4">
-    <div id="thongbao" class="alert alert-danger d-none face" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-  
-    <div class="card">
-        <div class="container-fluid">
-            <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post" action="">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="preview">
-                            <img src="{{ url("/upload/".$player->photo) }}" class="img-fluid rounded-top" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="details">
-                            <h1 class="product-title">Name: {{ $player->name }}</h1>
-                            <h3 class="product-title">Coach: {{ $player->coach->name }}</h3>
-                            <h3 class="product-title">Team: {{ $player->team->name }}</h3>
-                            <h3 class="product-title">Birth Day: {{ $player->birthday }}</h3>
-                            <h3 class="product-title">Phone: {{ $player->phone }}</h3>
-                            <h3 class="product-title">Address: {{ $player->address }}</h3>
-                        </div>
-                    </div>
-                </div>
-            </form>
+<div class="w3-content" style="max-width:1400px">
+
+    <!-- Header -->    
+    <!-- Grid -->
+    <div class="w3-row">
+    
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
+      <!-- Blog entry -->
+      <div class="w3-card-4 w3-margin w3-white">
+        <img style="height:500px;width:100%;" src="{{ url("/upload/".$player->photo) }}" class="img-fluid rounded-top" alt="">
+        <div class="w3-container">
+          <h3><b>Birth Day -- {{$player->birthday}}</b></h3>
+          <h5>Phone number:  <span class="w3-opacity">{{$player->phone}}</span></h5>
+          <h5>Address:  <span class="w3-opacity">{{$player->address}}</span></h5>
         </div>
+      </div>
+      <hr>
+    
+      <!-- Blog entry -->
+    <!-- END BLOG ENTRIES -->
     </div>
-</div>
+    
+    <!-- Introduction menu -->
+    <div class="w3-col l4">
+      <!-- About Card -->
+      <div class="w3-card w3-margin w3-margin-top">
+        <img style="width:100%;" src="{{ url("/upload/".$player->photo) }}" class="img-fluid rounded-top" alt="">
+        <div class="w3-container w3-white">
+          <h4><b>He Name Is <span style="color: brown">{{$player->name}}</span></b></h4>
+          <h4><b>Coach of he Is <span style="color: brown">{{$player->coach->name}}</span></b></h4>
+          <h4><b>His Team Name Is <span style="color: brown">{{$player->team->name}}</span></b></h4>
+        </div>
+      </div><hr>
+      
+    <!-- END Introduction Menu -->
+    </div>
+    
+    <!-- END GRID -->
+    </div><br>
+    
+    <!-- END w3-content -->
+    </div>
 @endsection

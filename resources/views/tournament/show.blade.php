@@ -16,7 +16,7 @@
                         <div class="details">
                             <h1 class="product-title">Name: {{ $tournament->name }}</h1>
                             <h3 class="product-title">Day Match: {{ $tournament->daymatch }}</h3>
-                            <h3 class="product-title">Prize: {{ $tournament->prize }}</h3> 
+                            <h3 class="product-title">Prize: ${{ $tournament->prize }} </h3> 
                         </div>
                     </div>
                 </div>

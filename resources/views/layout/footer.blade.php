@@ -1,7 +1,8 @@
 <footer class="footer mt-auto py-3">
     <div class="container">
         <p class="float-right">
-            <a href="/management">Về đầu trang</a>
+            <a href="/coachs">
+               << Back</a>
         </p>
     </div>
 </footer>
