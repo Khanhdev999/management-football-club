@@ -13,6 +13,7 @@ class Player extends Model
         'birthday',
         'phone',
         'address',
+        'photo',
     ];
     public function team() {
         return $this->belongsTo(Team::class);
@@ -20,7 +21,7 @@ class Player extends Model
     public function coach(){
         return $this->belongsTo(Coach::class);
     }
-    public function tournament(){
+    public function tournaments(){
         return $this->belongsToMany(Tournament::class);
     }
 }

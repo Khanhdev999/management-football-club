@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('birthday');
             $table->string('phone');
             $table->string('address');
+            $table->string('photo');
             $table->timestamps();
         });
     }

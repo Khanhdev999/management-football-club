@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\CoachController;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('login');
 });
-Route::resource('/coachs',CoachController::class);
+Route::get('/register', function () {
+    return view('register');
+});
+
+
+Route::resource('/players',PlayerController::class);
+Route::resource('/tournaments',TournamentController::class);
