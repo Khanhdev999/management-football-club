@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @section('title', 'Login')
 @section('content')
-<form action="/register" method="post">
+<form action="/login" method="post">
     @csrf
     <body>
         <div id="login">
