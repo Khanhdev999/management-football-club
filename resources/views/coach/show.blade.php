@@ -11,7 +11,7 @@
     <div class="w3-col l8 s12">
       <!-- Blog entry -->
       <div class="w3-card-4 w3-margin w3-white">
-        <img style="height:500px;width:100%;" src="{{ url("/upload/".$coach->photo) }}" class="img-fluid rounded-top" alt="">
+        <img style="height:500px;width:100%;object-fit:cover" src="{{ url("/upload/".$coach->photo) }}" class="img-fluid rounded-top" alt="">
 
       </div>
       <hr>

@@ -1,22 +1,21 @@
 @extends('layout.layout')
 @section('title', 'Tournament List')
 @section('content')
+@if(Session::has('mes'))
+<div class="alert alert-success" role="alert">
+    {{Session::get('mes')}}
+</div>
+@endif
+@if(Session::has('delete'))
+<div class="alert alert-success" role="alert">
+    {{Session::get('delete')}}
+</div>
+@endif
 <h1 style="text-align:center;">Tournament List
 </h1>
 <a href="{{url("/tournaments/create")}}" class="btn btn-secondary" style="margin-left:10%;">Add new</a>
 <br/>
 <div class="table-responsive" style="display: flex;text-align:center;align-item:center">
-  @if(Session::has('mes'))
-  <div class="alert alert-success" role="alert">
-      {{Session::get('mes')}}
-  </div>
-  @endif
-  @if(Session::has('delete'))
-  <div class="alert alert-success" role="alert">
-      {{Session::get('delete')}}
-  </div>
-  @endif
-
   <table class="table table-striped table-hover">
       <thead class="table-light">
           <tr>
