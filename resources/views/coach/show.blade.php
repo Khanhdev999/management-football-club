@@ -12,11 +12,7 @@
       <!-- Blog entry -->
       <div class="w3-card-4 w3-margin w3-white">
         <img style="height:500px;width:100%;" src="{{ url("/upload/".$coach->photo) }}" class="img-fluid rounded-top" alt="">
-        <div class="w3-container">
-          <h3><b>Birth Day -- {{$coach->birthday}}</b></h3>
-          <h5>Phone number:  <span class="w3-opacity">{{$coach->phone}}</span></h5>
-          <h5>Address:  <span class="w3-opacity">{{$coach->address}}</span></h5>
-        </div>
+
       </div>
       <hr>
     
@@ -30,8 +26,10 @@
       <div class="w3-card w3-margin w3-margin-top">
         <img style="width:100%;" src="{{ url("/upload/".$coach->photo) }}" class="img-fluid rounded-top" alt="">
         <div class="w3-container w3-white">
-          <h4><b>He Name Is <span style="color: brown">{{$coach->name}}</span></b></h4>
-          <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+          <h1><b>Name: <span style="color: brown;font-family:'Courier New', Courier, monospace">{{$coach->name}}</span></b></h1>
+            <h3><b><strong>Birth Day:  </strong><span style="font-family:'Courier New', Courier, monospace">{{$coach->birthday}}</span></b></h3>
+            <h3><strong>Phone number:</strong>  <span style="font-family:'Courier New', Courier, monospace">{{$coach->phone}}</span></h3>
+            <h3><strong>Address:</strong>  <span style="font-family:'Courier New', Courier, monospace">{{$coach->address}}</span></h3>
         </div>
       </div><hr>
       

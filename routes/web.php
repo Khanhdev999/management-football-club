@@ -18,7 +18,7 @@ use App\Http\Controllers\AuthenticationController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/naiso',function(){
+Route::get('/managements',function(){
     return view('welcome');
 });
 
