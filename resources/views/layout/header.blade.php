@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/management">Home</a>
         <div class="navbar-collapse collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -36,3 +35,8 @@
             </ul>
     </div>
 </nav>
+<style>
+    .mr-auto :hover{
+        text-decoration:underline;   
+    }
+</style>

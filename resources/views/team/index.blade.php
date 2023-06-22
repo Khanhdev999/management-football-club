@@ -1,7 +1,10 @@
 @extends('layout.layout')
 @section('title', 'Player List')
 @section('content')
-<div class="table-responsive">
+<h1 style="text-align:center;">Team List
+</h1>
+<a href="{{url("/teams/create")}}" class="btn btn-secondary" style="margin-left:10%;">Add new</a>
+<div class="table-responsive" style="display: flex;text-align:center;align-item:center" >
   @if(Session::has('mes'))
   <div class="alert alert-success" role="alert">
       {{Session::get('mes')}}
@@ -12,9 +15,7 @@
       {{Session::get('delete')}}
   </div>
   @endif
-  <h1 style="text-align:center;">Team List
-  </h1>
-  <a href="{{url("/teams/create")}}" class="btn btn-primary">Add new</a>
+
   <br/>
   <table class="table table-striped table-hover">
       <thead class="table-light">
