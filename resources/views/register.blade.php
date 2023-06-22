@@ -30,7 +30,7 @@
                                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" name="submit" class="btn btn-info btn-md" value="Login">
+                                    <input type="submit" name="submit" class="btn btn-info btn-md" value="Register">
                                     @error('message')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
