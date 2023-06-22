@@ -17,8 +17,8 @@
         <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" value="{{$coach->phone}}">
       </div>
       <div class="form-group">
-        <label for="inputAddress">Coach Photo</label>
-        <input type="file" class="form-control" id="photo" name="photo" value="{{$coach->photo}}">
+        <label for="inputAddress">Coach Photo</label> 
+        <input type="file" class="form-control" disabled="disabled" id="photo" name="photo" value="{{$coach->photo}}">
       </div>
     <div class="form-group">
       <label for="inputAddress">Address</label>

@@ -42,13 +42,10 @@
             @endforeach
         </select>
     </div>
-      {{-- <div class="form-group">
+      <div class="form-group">
         <label for="photo">Player Photo</label>
-        <input type="file" class="form-control-file" id="photo" name="photo">
-        @if ($player->photo)
-            <img src="{{ asset('storage/' . $player->photo) }}" alt="Player Photo" width="100">
-        @endif
-    </div> --}}
+        <input type="file" class="form-control-file" disabled="disabled" id="photo" name="photo">
+    </div>
     <div class="form-group">
       <label for="address">Address</label>
       <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" value="{{$player->address}}">
