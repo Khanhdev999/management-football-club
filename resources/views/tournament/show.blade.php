@@ -1,27 +1,17 @@
 @extends('layout.layout')
-@section('title', 'Tournament Detail')
+@section('title', 'TOURNAMENT Detail')
 @section('content')
-<div class="container mt-4">
-    <div id="thongbao" class="alert alert-danger d-none face" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-  
-    <div class="card">
-        <div class="container-fluid">
-            <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post" action="">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="details">
-                            <h1 class="product-title">Name: {{ $tournament->name }}</h1>
-                            <h3 class="product-title">Day Match: {{ $tournament->daymatch }}</h3>
-                            <h3 class="product-title">Prize: ${{ $tournament->prize }} </h3> 
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+<header class="w3-container w3-center w3-padding-32"> 
+    <h1><b>TOURNAMENT LIST</b></h1>
+    <p>NAME: <strong style="font-size: 30px;color:red">{{$tournament->name}}</strong></p>
+    <p>DAY MATCH: <strong style="font-size: 30px;color:red">{{$tournament->daymatch}}</strong></p>
+    <p>PRIZE: <strong style="font-size: 30px;color:red">{{$tournament->prize}}</strong></p>
+  </header>
 @endsection
+<style>
+    .details{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+</style>

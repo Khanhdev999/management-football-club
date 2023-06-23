@@ -1,36 +1,18 @@
 @extends('layout.layout')
-@section('title', 'Match Detail')
+@section('title', 'Goal Detail')
 @section('content')
-<div class="container mt-4">
-    <div id="thongbao" class="alert alert-danger d-none face" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
+<header class="w3-container w3-center w3-padding-32"> 
+    <h1><b>GOAL LIST</b></h1>
+    <p>COUNT: <strong style="font-size: 30px;color:red">{{$goal->count}}</strong></p>
+    <label for="players">PLAYER LIST</label>
+    <select name="players[]" id="players" class="form-control" multiple>
+        @foreach($players as $player)
+        <option disabled="disabled" value="{{$player->id}}" 
+            @if($goal->players->contains($player->id)) selected
+             @endif>{{$player->name}}</option>
+        @endforeach
+    </select>
+    <p>MATCH: <strong style="font-size: 30px;color:red">{{ $goal->football_match->name }}</strong></p>
+</header>
   
-    <div class="card">
-        <div class="container-fluid">
-            <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post" action="">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="details">
-                            <h1 class="product-title">Count: {{ $goal->count }}</h1>
-                            <div class="form-group">
-                                <label for="players">Players List</label>
-                                <select name="players[]" id="players" class="form-control" multiple>
-                                    @foreach($players as $player)
-                                    <option disabled="disabled" value="{{$player->id}}" 
-                                        @if($goal->players->contains($player->id)) selected
-                                         @endif>{{$player->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <h3 class="product-title">Match: {{ $goal->football_match->name }} </h3> 
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 @endsection

@@ -1,21 +1,10 @@
 @extends('layout.layout')
-@section('title', 'Team Detail')
+@section('title', 'Match Detail')
 @section('content')
-<div class="container mt-4">
-    <div class="card">
-        <div class="container-fluid">
-            <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post" action="">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="details">
-                            <h1 class="product-title">Name: {{ $team->name }}</h1>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+<header class="w3-container w3-center w3-padding-32"> 
+    <h1><b>TEAM LIST</b></h1>
+    <p>NAME: <strong style="font-size: 40px;color:red">{{$team->name}}</strong></p>
+  </header>
 @endsection
 <style>
     .details{
