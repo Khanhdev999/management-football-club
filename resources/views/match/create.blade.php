@@ -1,6 +1,8 @@
 @extends('layout.layout')
 @section('title','New Match')
 @section('content')
+<div style="margin-top:50px" class="w3-display-middle">
+
 <form action="/matchs" method="post" >
     @csrf
     <div>
@@ -21,4 +23,6 @@
   </div>
     <button type="submit" class="btn btn-primary">Add</button>
   </form>
+</div>
+
 @endsection

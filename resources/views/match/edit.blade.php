@@ -1,6 +1,8 @@
 @extends('layout.layout')
 @section('title','New Match')
 @section('content')
+<div style="margin-top:50px" class="w3-display-middle">
+
 <form action="/matchs/{{$match->id}}" method="post">
     {{ method_field('PUT') }}
     @csrf
@@ -18,6 +20,9 @@
         <option value="{{$tournament->id}}">{{$tournament->name}}</option>
         @endforeach
     </select>
+    <div class="form-group">
     <button type="submit" class="btn btn-primary">Edit</button>
+    </div>
   </form>
+</div>
 @endsection

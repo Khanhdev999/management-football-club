@@ -1,6 +1,8 @@
 @extends('layout.layout')
 @section('title','New Goal')
 @section('content')
+<div style="margin-top:50px" class="w3-display-middle">
+
 <form action="/goals" method="post">
     @csrf
       <div class="form-group">
@@ -25,6 +27,9 @@
             @endforeach
         </select>
       </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+      <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-primary">Add</button>
+        </div>
   </form>
+</div>
 @endsection

@@ -1,4 +1,4 @@
-<h3 style="text-align: center;color:white;font-size:50px">MANAGEMENT FOOTBALL CLUB</h3>
+<h3 style="text-align: center;color:grey;font-size:50px">MANAGEMENT FOOTBALL CLUB</h3>
 <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
     <div class="container">
         <div class="navbar-collapse collapse" id="navbarCollapse">

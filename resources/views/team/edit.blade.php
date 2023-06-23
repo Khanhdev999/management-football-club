@@ -1,6 +1,8 @@
 @extends('layout.layout')
 @section('title','Edit Tournament')
 @section('content')
+<div style="margin-top:50px" class="w3-display-middle">
+
 <form action="/teams/{{$team->id}}" method="post" >
   {{ method_field('PUT') }}
 
@@ -12,4 +14,5 @@
 
     <button type="submit" class="btn btn-primary">Edit</button>
   </form>
+</div>
 @endsection

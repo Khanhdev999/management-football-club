@@ -2,8 +2,8 @@
 @section('title','New Player')
 @section('content')
 <form action="/players" method="post" enctype="multipart/form-data">
-    @csrf
-    <div style="">
+  @csrf
+  <div style="margin-top:50px" class="w3-display-middle">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Name">
@@ -42,7 +42,6 @@
         <label for="inputAddress">Coach Photo</label>
         <input type="file" class="form-control" id="photo" name="photo">
       </div>
-    </div>
     <button type="submit" class="btn btn-primary">Add</button>
-  </form>
+</form>
 @endsection

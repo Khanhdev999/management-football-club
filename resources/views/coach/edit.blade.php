@@ -1,6 +1,8 @@
 @extends('layout.layout')
 @section('title','Edit Coach')
 @section('content')
+<div style="margin-top:50px" class="w3-display-middle">
+
 <form action="/coachs/{{$coach->id}}" method="post" enctype="multipart/form-data">
   {{ method_field('PUT') }}
     @csrf
@@ -26,4 +28,5 @@
     </div>
     <button type="submit" class="btn btn-primary">Edit</button>
   </form>
+</div>
 @endsection
