@@ -44,8 +44,8 @@ class GoalController extends Controller
         $goal = new Goal();
         $goal->count = $request->count;
         $goal->football_match_id = $request->football_match_id;
-        $goal->player_id = $request->player_id;
         $goal->save();
+        $goal->players()->attach($request->players);
         return redirect('/goals');
     }
 
@@ -55,8 +55,10 @@ class GoalController extends Controller
     public function show(string $id)
     {
         $goal = Goal::find($id);
+        $players=Player::all();
         return view('goal.show', [
             'goal' => $goal,
+            'players' => $players,
         ]);
     }
 
@@ -83,8 +85,8 @@ class GoalController extends Controller
         $goal = Goal::find($id);
         $goal->count = $request->count;
         $goal->football_match_id = $request->football_match_id;
-        $goal->player_id = $request->player_id;
         $goal->save();
+        $goal->players()->sync($request->players);
         return redirect('/goals');
     }
 

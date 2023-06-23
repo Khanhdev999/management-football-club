@@ -11,7 +11,7 @@
     <div class="w3-col l8 s12">
       <!-- Blog entry -->
       <div class="w3-card-4 w3-margin w3-white">
-        <img style="height:500px;width:100%;object-fit:cover" src="{{ url("/upload/".$player->photo) }}" class="img-fluid rounded-top" alt="">
+        <img style="height:420px;width:100%;object-fit:cover" src="{{ url("/upload/".$player->photo) }}" class="img-fluid rounded-top" alt="">
         <div class="w3-container">
           <h3><b>Birth Day -- {{$player->birthday}}</b></h3>
           <h5>Phone number:  <span class="w3-opacity">{{$player->phone}}</span></h5>

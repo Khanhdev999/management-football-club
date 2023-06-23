@@ -9,12 +9,12 @@
       </div>
       <div class="form-group col-md-6">
         <label for="player" class="form-label">Players List</label>
-        <select id="player_id" name="player_id" id="player_id" class="form-select" aria-label="Select Category">
-            <option selected>Please choose one</option>
-            @foreach($players as $player)
-            <option value="{{$player->id}}">{{$player->name}}</option>
-            @endforeach
-        </select>
+        <select name="players[]" id="players" class="form-control" multiple>
+          @foreach($players as $player)
+          <option value="{{$player->id}}">{{$player->name}}</option>
+          @endforeach
+      </select>
+  
       </div>
       <div class="form-group col-md-6">
         <label for="category" class="form-label">Match List</label>

@@ -15,7 +15,16 @@
                     <div class="col-md-6">
                         <div class="details">
                             <h1 class="product-title">Count: {{ $goal->count }}</h1>
-                            <h3 class="product-title">Player: {{ $goal->player->name }}</h3>
+                            <div class="form-group">
+                                <label for="players">Players List</label>
+                                <select name="players[]" id="players" class="form-control" multiple>
+                                    @foreach($players as $player)
+                                    <option disabled="disabled" value="{{$player->id}}" 
+                                        @if($goal->players->contains($player->id)) selected
+                                         @endif>{{$player->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <h3 class="product-title">Match: {{ $goal->football_match->name }} </h3> 
                         </div>
                     </div>

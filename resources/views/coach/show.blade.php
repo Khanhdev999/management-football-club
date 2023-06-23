@@ -24,7 +24,7 @@
     <div class="w3-col l4">
       <!-- About Card -->
       <div class="w3-card w3-margin w3-margin-top">
-        <img style="width:100%;" src="{{ url("/upload/".$coach->photo) }}" class="img-fluid rounded-top" alt="">
+        <img style="height:70%;;width:100%;" src="{{ url("/upload/".$coach->photo) }}" class="img-fluid rounded-top" alt="">
         <div class="w3-container w3-white">
           <h1><b>Name: <span style="color: brown;font-family:'Courier New', Courier, monospace">{{$coach->name}}</span></b></h1>
             <h3><b><strong>Birth Day:  </strong><span style="font-family:'Courier New', Courier, monospace">{{$coach->birthday}}</span></b></h3>

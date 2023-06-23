@@ -17,3 +17,10 @@
     </div>
 </div>
 @endsection
+<style>
+    .details{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+</style>

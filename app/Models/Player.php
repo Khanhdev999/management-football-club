@@ -25,6 +25,6 @@ class Player extends Model
     //     return $this->belongsToMany( FootballMatch::class);
     // }
     public function goals(){
-        return $this->hasMany( Goal::class);
+        return $this->belongsToMany( Goal::class);
     }
 }

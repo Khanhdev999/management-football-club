@@ -12,7 +12,12 @@
         <label for="name">Time</label>
         <input type="text" class="form-control" id="time" name="time" placeholder="Time of Match" value="{{$match->time}}" >
       </div>
-
+      <select id="tournament_id" name="tournament_id"  class="form-select" aria-label="Select Category">
+        <option selected>Please choose one</option>
+        @foreach($tournaments as $tournament)
+        <option value="{{$tournament->id}}">{{$tournament->name}}</option>
+        @endforeach
+    </select>
     <button type="submit" class="btn btn-primary">Edit</button>
   </form>
 @endsection
