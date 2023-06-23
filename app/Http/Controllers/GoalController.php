@@ -15,7 +15,6 @@ class GoalController extends Controller
     public function index()
     {
         $goals = Goal::all();
-
         return view('goal.index', [
             'goals' => $goals,
         ]);
@@ -26,9 +25,11 @@ class GoalController extends Controller
      */
     public function create()
     {
-        $players = Player::all();
+        $goals = Goal::all();
+        $players=Player::all();
         $football_matchs = FootballMatch::all();
         return view('goal.create', [
+            'goals' => $goals,
             'players' => $players,
             'football_matchs' => $football_matchs,
         ]
@@ -40,11 +41,11 @@ class GoalController extends Controller
      */
     public function store(Request $request)
     {
-        $player = new Player();
-        $player->count = $request->count;
-        $player->player_id = $request->player_id;
-        $player->football_match_id = $request->football_match_id;
-        $player->save();
+        $goal = new Goal();
+        $goal->count = $request->count;
+        $goal->football_match_id = $request->football_match_id;
+        $goal->player_id = $request->player_id;
+        $goal->save();
         return redirect('/goals');
     }
 
@@ -79,11 +80,11 @@ class GoalController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $player = Player::find($id);
-        $player->count = $request->count;
-        $player->player_id = $request->player_id;
-        $player->football_match_id = $request->football_match_id;
-        $player->save();
+        $goal = Goal::find($id);
+        $goal->count = $request->count;
+        $goal->football_match_id = $request->football_match_id;
+        $goal->player_id = $request->player_id;
+        $goal->save();
         return redirect('/goals');
     }
 

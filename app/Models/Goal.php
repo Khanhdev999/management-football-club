@@ -15,6 +15,6 @@ class Goal extends Model
         return $this->belongsTo( Player::class);
     }
     public function football_match(){
-        return $this->belongsTo( Football_match::class);
+        return $this->belongsTo( FootballMatch::class);
     }
 }

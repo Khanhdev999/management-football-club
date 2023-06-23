@@ -53,7 +53,6 @@ class PlayerController extends Controller
         $photo = $request->file('photo')->store('public'); 
         $player->photo = substr($photo,strlen('public/'));
         $player->save();
-        $player->tournaments() -> attach($request->tournament);
         return redirect('/players');
     }
 
@@ -97,7 +96,6 @@ class PlayerController extends Controller
         $player->birthday = $request->birthday;
         $player->phone = $request->phone;
         $player->address = $request->address;
-        $player->tournaments() -> sync($request->tournaments);
         $player->save();
         return redirect('/players');
     }

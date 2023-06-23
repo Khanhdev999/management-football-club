@@ -35,14 +35,6 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="tournaments">Tags</label>
-        <select name="tournaments[]" id="tournaments" class="form-control" multiple>
-            @foreach($tournament as $tournament)
-            <option value="{{$tournament->id}}">{{$tournament->name}}</option>
-            @endforeach
-        </select>
-    </div>
-      <div class="form-group">
         <label for="photo">Player Photo</label>
         <input type="file" class="form-control-file" disabled="disabled" id="photo" name="photo">
     </div>

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('goals', function (Blueprint $table) {
             $table->id();
-            $table->integer('count');
+            $table->string('count')->nullable();
             $table->foreignId('player_id')->constrained()->onDelete('cascade');
             $table->foreignId('football_match_id')->constrained()->onDelete('cascade');
             $table->timestamps();

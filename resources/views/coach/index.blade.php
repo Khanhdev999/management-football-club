@@ -27,7 +27,9 @@
                 <tr class="table-primary" >
                   <td>{{$coach->name}}</td>
                   <td>
+
                     <a href="{{url("/coachs/".$coach->id)}}" class="btn btn-primary">View</a>
+                    <i class='fas fa-apple-alt' style='font-size:24px'></i>
                     <a href="{{url("/coachs/".$coach->id."/edit")}}" class="btn btn-warning">Edit</a>
                     <form action="{{url("/coachs/".$coach->id)}}" method="post" class="d-inline">
                       {{ method_field('DELETE') }}
@@ -44,3 +46,4 @@
   </table>
 </div>
 @endsection
+

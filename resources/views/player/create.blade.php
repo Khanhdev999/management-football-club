@@ -9,7 +9,7 @@
         <input type="text" class="form-control" id="name" name="name" placeholder="Name">
       </div>
       <div class="form-group col-md-6">
-        <label for="category" class="form-label">Player List</label>
+        <label for="category" class="form-label">Coachs List</label>
         <select id="category" name="coach_id" id="coach_id" class="form-select" aria-label="Select Category">
             <option selected>Please choose one</option>
             @foreach($coachs as $coach)
@@ -18,7 +18,7 @@
         </select>
       </div>
       <div class="form-group col-md-6">
-        <label for="category" class="form-label">Team List</label>
+        <label for="category" class="form-label">Teams List</label>
         <select id="category" name="team_id" id="team_id" class="form-select" aria-label="Select Category">
             <option selected>Please choose one</option>
             @foreach($teams as $team)
@@ -26,14 +26,6 @@
             @endforeach
         </select>
       </div>
-      <div class="form-group">
-        <label for="tournaments">Tags</label>
-        <select name="tournaments[]" id="tournaments" class="form-control" multiple>
-            @foreach($tournaments as $tournament)
-            <option value="{{$tournament->id}}">{{$tournament->name}}</option>
-            @endforeach
-        </select>
-    </div>
       <div class="form-group col-md-6">
         <label for="inputPassword4">Birth Day</label>
         <input type="text" class="form-control" id="birthday"name="birthday" placeholder="Birth Day">

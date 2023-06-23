@@ -12,9 +12,9 @@ class FootballMatch extends Model
         'name',
         'time'
     ];
-    public function goals() {
+    public function players() {
 
-        return $this->hasMany(Goal::class);
+        return $this->belongsToMany(Player::class);
 
     }
     public function tournament() {

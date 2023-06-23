@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FootballMatch;
+use App\Models\Tournament;
 use Illuminate\Http\Request;
 
 class MatchController extends Controller
@@ -25,8 +26,11 @@ class MatchController extends Controller
     public function create()
     {
         $matchs =  FootballMatch::all();
+        $tournaments = Tournament::all();
+
         return view('match.create', [
             'matchs' => $matchs,
+            'tournaments'=>$tournaments,
         ]);
     }
 
@@ -38,6 +42,7 @@ class MatchController extends Controller
         $match = new FootballMatch();
         $match->name = $request->name;
         $match->time = $request->time;
+        $match->tournament_id=$request->tournament_id;
 
         $match->save();
         return redirect('/matchs')->with('mes','Add successfull!!!');
@@ -73,6 +78,7 @@ class MatchController extends Controller
         $match = FootballMatch::find($id);
         $match->name = $request->name;
         $match->time = $request->time;
+        $match->tournament_id=$request->tournament_id;
         $match->save();
 
         return redirect('/matchs');
