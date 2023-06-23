@@ -1,17 +1,13 @@
 @extends('layout.layout')
 @section('title', 'TOURNAMENT Detail')
 @section('content')
-<header class="w3-container w3-center w3-padding-32"> 
-    <h1><b>TOURNAMENT LIST</b></h1>
-    <p>NAME: <strong style="font-size: 30px;color:red">{{$tournament->name}}</strong></p>
-    <p>DAY MATCH: <strong style="font-size: 30px;color:red">{{$tournament->daymatch}}</strong></p>
-    <p>PRIZE: <strong style="font-size: 30px;color:red">{{$tournament->prize}}</strong></p>
-  </header>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">TOURNAMENT LIST</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">NAME: <strong style="font-size: 40px;color:grey">{{$tournament->name}}</strong></p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">DAY MATCH: <strong style="font-size: 40px;color:grey">{{$tournament->daymatch}}</strong></p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">PRIZE: <strong style="font-size: 40px;color:grey">{{$tournament->prize}}</strong></p>
+  </div>
 @endsection
-<style>
-    .details{
-        display: flex;
-        text-align: center;
-        justify-content: center;
-    }
-</style>

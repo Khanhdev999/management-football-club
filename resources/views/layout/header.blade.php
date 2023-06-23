@@ -1,4 +1,4 @@
-<h3 style="text-align: center;">MANAGEMENT FOOTBALL CLUB</h3>
+<h3 style="text-align: center;color:white;font-size:50px">MANAGEMENT FOOTBALL CLUB</h3>
 <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
     <div class="container">
         <div class="navbar-collapse collapse" id="navbarCollapse">
@@ -33,7 +33,11 @@
                     <a class="nav-link" href="#">{{ Auth::user()->name }} <span class="visually-hidden"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout <span class="visually-hidden"></span></a>
+                    <a class="nav-link" href="/logout">
+                        <button type="button" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-log-out"></span> Log out
+                        </button><span class="visually-hidden"></span>
+                    </a>
                 </li>
             @else
                 <li class="nav-item">

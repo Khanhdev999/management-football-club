@@ -1,10 +1,10 @@
 @extends('layout.layout')
 @section('title', 'Goal Detail')
 @section('content')
-<header class="w3-container w3-center w3-padding-32"> 
-    <h1><b>GOAL LIST</b></h1>
-    <p>COUNT: <strong style="font-size: 30px;color:red">{{$goal->count}}</strong></p>
-    <label for="players">PLAYER LIST</label>
+
+<div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">PLAYER LIST</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
     <select name="players[]" id="players" class="form-control" multiple>
         @foreach($players as $player)
         <option disabled="disabled" value="{{$player->id}}" 
@@ -12,7 +12,6 @@
              @endif>{{$player->name}}</option>
         @endforeach
     </select>
-    <p>MATCH: <strong style="font-size: 30px;color:red">{{ $goal->football_match->name }}</strong></p>
-</header>
-  
+   <p class="w3-jumbo w3-animate-top">MATCH: {{ $goal->football_match->name }}</p>
+  </div>
 @endsection
