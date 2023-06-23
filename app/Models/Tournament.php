@@ -13,7 +13,7 @@ class Tournament extends Model
         'daymatch',
         'prize',
     ];
-    public function palyers() {
-        return $this->belongsToMany(Player::class);
+    public function match() {
+        return $this->belongsToMany(FootballMatch::class);
     }
 }

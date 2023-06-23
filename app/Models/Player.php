@@ -21,7 +21,7 @@ class Player extends Model
     public function coach(){
         return $this->belongsTo(Coach::class);
     }
-    public function goal(){
+    public function goals(){
         return $this->hasMany( Goal::class);
     }
 }

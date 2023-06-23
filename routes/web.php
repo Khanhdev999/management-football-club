@@ -6,7 +6,8 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
-
+use App\Http\Controllers\MatchController;
+use App\Http\Controllers\GoalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,8 @@ Route::resource('/players',PlayerController::class)->middleware('auth');
 Route::resource('/tournaments',TournamentController::class)->middleware('auth');
 Route::resource('/teams',TeamController::class)->middleware('auth');
 Route::resource('/coachs',CoachController::class)->middleware('auth');
-
+Route::resource('/goals',GoalController::class);
+Route::resource('/matchs',MatchController::class);
 Route::get('/login', AuthenticationController::class . '@loginIndex')->name('login');
 Route::get('/register', AuthenticationController::class . '@registerIndex');
 Route::post('/login', AuthenticationController::class . '@login');
