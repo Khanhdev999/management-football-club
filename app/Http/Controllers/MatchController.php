@@ -41,8 +41,8 @@ class MatchController extends Controller
     {
         $match = new FootballMatch();
         $match->name = $request->name;
+        $match->tournament_id = $request->tournament_id;
         $match->time = $request->time;
-        $match->tournament_id=$request->tournament_id;
 
         $match->save();
         return redirect('/matchs')->with('mes','Add successfull!!!');
@@ -54,8 +54,10 @@ class MatchController extends Controller
     public function show(string $id)
     {
         $match = FootballMatch::find($id);
+        $tournaments = Tournament::all();
         return view('match.show', [
             'match' => $match,
+            'tournaments' => $tournaments,
         ]);
     }
 
@@ -65,8 +67,10 @@ class MatchController extends Controller
     public function edit(string $id)
     {
         $match = FootballMatch::find($id);
+        $tournaments = Tournament::all();
         return view('match.edit', [
             'match' => $match,
+            'tournaments' => $tournaments,
         ]);
     }
 

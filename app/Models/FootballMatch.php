@@ -12,14 +12,19 @@ class FootballMatch extends Model
         'name',
         'time'
     ];
-    public function players() {
+    // public function players() {
 
-        return $this->belongsToMany(Player::class);
+    //     return $this->belongsToMany(Player::class);
 
-    }
+    // }
     public function tournament() {
 
         return $this->belongsTo(Tournament::class);
+
+    }
+    public function goals() {
+
+        return $this->hasMany(Goal::class);
 
     }
 }
