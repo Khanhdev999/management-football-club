@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\FootballMatch;
 use App\Models\Goal;
+use App\Models\Player;
+use Illuminate\Http\Request;
 
 class GoalController extends Controller
 {
@@ -13,6 +15,7 @@ class GoalController extends Controller
     public function index()
     {
         $goals = Goal::all();
+
         return view('goal.index', [
             'goals' => $goals,
         ]);
@@ -23,10 +26,13 @@ class GoalController extends Controller
      */
     public function create()
     {
-        $goal =  Goal::all();
+        $players = Player::all();
+        $football_matchs = FootballMatch::all();
         return view('goal.create', [
-            'goal' => $goal,
-        ]);
+            'players' => $players,
+            'football_matchs' => $football_matchs,
+        ]
+    );
     }
 
     /**
@@ -34,11 +40,12 @@ class GoalController extends Controller
      */
     public function store(Request $request)
     {
-        $goal = new Goal();
-        $goal->name = $request->name;
-
-        $team->save();
-        return redirect('/goals')->with('mes','Add successfull!!!');
+        $player = new Player();
+        $player->count = $request->count;
+        $player->player_id = $request->player_id;
+        $player->football_match_id = $request->football_match_id;
+        $player->save();
+        return redirect('/goals');
     }
 
     /**
@@ -46,9 +53,9 @@ class GoalController extends Controller
      */
     public function show(string $id)
     {
-        $team = Team::find($id);
-        return view('team.show', [
-            'team' => $team,
+        $goal = Goal::find($id);
+        return view('goal.show', [
+            'goal' => $goal,
         ]);
     }
 
@@ -57,9 +64,13 @@ class GoalController extends Controller
      */
     public function edit(string $id)
     {
-        $team = Team::find($id);
-        return view('team.edit', [
-            'team' => $team,
+        $goal = Goal::find($id);
+        $players = Player::all();
+        $football_matchs = FootballMatch::all();
+        return view('goal.edit', [
+            'goal' => $goal,
+            'players' => $players,
+            'football_matchs' =>$football_matchs,
         ]);
     }
 
@@ -68,11 +79,12 @@ class GoalController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $team = Team::find($id);
-        $team->name = $request->name;
-        $team->save();
-
-        return redirect('/teams');
+        $player = Player::find($id);
+        $player->count = $request->count;
+        $player->player_id = $request->player_id;
+        $player->football_match_id = $request->football_match_id;
+        $player->save();
+        return redirect('/goals');
     }
 
     /**
@@ -80,8 +92,10 @@ class GoalController extends Controller
      */
     public function destroy(string $id)
     {
-        $team = Team::find($id);
-        $team->delete();
-        return redirect('/teams')->with('delete','Delete successfull!!!');
+        $goal = Goal::find($id);
+
+        $goal->delete();
+
+        return redirect('/goals')->with('delete','Delete successfull!!!');
     }
 }

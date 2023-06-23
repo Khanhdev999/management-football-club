@@ -11,8 +11,10 @@ class Goal extends Model
     protected $fillable = [
         'count',
     ];
-    
-    public function players() {
-        return $this->belongTo(Player::class);
+    public function player(){
+        return $this->belongsTo( Player::class);
+    }
+    public function football_match(){
+        return $this->belongsTo( Football_match::class);
     }
 }
